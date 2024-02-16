@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgFoto"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="15dp"
@@ -27,13 +27,13 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnFoto"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="112dp"
         android:src="@drawable/add"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imgFoto"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <LinearLayout
@@ -43,7 +43,7 @@
         android:layout_marginRight="30dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imgFoto"
         tools:layout_editor_absoluteX="30dp">
 
         <TextView
@@ -55,7 +55,7 @@
 
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/txtSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -71,7 +71,7 @@
             android:textSize="15dp" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -90,7 +90,7 @@
             android:textSize="15dp" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/txtTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -109,7 +109,7 @@
             android:textSize="15dp" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine2"
+            android:id="@+id/txtNotas"
             android:layout_width="match_parent"
             android:layout_height="77dp"
             android:layout_marginTop="5dp"
@@ -119,14 +119,14 @@
             android:inputType="textMultiLine" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="GUARDAR CONTACTO" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnListaContactos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
