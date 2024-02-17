@@ -22,8 +22,8 @@ public class Transacciones {
             + pais + " TEXT, "
             + nombres + " TEXT, "
             + telefonos + " TEXT, "
-            + imagen + " BLOB, "
-            + notas + " TEXT); ";
+            + notas + " TEXT, "
+            + imagen + " BLOB); ";
 
     // Sentencia SQL para eliminar la tabla contactos
     public static final String DropTableContactos = "DROP TABLE IF EXISTS " + TableContactos + ";";

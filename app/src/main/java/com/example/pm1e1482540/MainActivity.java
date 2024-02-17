@@ -161,6 +161,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Debe de escribir un telefono" ,Toast.LENGTH_LONG).show();
         }else if (nota.getText().toString().equals("")){
             Toast.makeText(getApplicationContext(), "Debe de escribir una nota" ,Toast.LENGTH_LONG).show();
+        } else if (imgFoto.getDrawable() == null) {
+            Toast.makeText(getApplicationContext(), "Debe de tomar una foto", Toast.LENGTH_LONG).show();
         }else {
             guardarContacto(imagen);
         }
@@ -241,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
         spninner.setSelection(0);
         nombre.setText("");
         telefono.setText("");
-        nota.setText("");;
+        nota.setText("");
+        imgFoto.setImageDrawable(null);
     }
 }

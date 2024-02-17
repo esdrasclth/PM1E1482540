@@ -36,6 +36,7 @@ public class UpdateContactActivity extends AppCompatActivity {
         String fono  = getIntent().getExtras().getString("Telefono");
         String notes  = getIntent().getExtras().getString("Nota");
         Button btnUpdate = (Button) findViewById(R.id.btnActualizar);
+        Button btnRegresar = (Button) findViewById(R.id.btnRegresar);
 
         nombre = (EditText) findViewById(R.id.txtNombre);
         telefono = (EditText) findViewById(R.id.txtTelefono);
@@ -49,6 +50,15 @@ public class UpdateContactActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 actualizarContacto();
+            }
+        });
+
+        btnRegresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(UpdateContactActivity.this, ListContacActivity.class);
+                startActivity(i);
+                finish();
             }
         });
     }

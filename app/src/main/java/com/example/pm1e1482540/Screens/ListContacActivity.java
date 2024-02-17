@@ -16,6 +16,8 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import android.Manifest;
+
+import com.example.pm1e1482540.MainActivity;
 import com.example.pm1e1482540.R;
 
 import android.text.Editable;
@@ -38,22 +40,18 @@ public class ListContacActivity extends AppCompatActivity {
 
     SQLiteConexion conexion;
 
-    Button btnver, btncompartir, btneliminar, btnactualizar, btnllamar;
-    Button btnverImagen;
-    Button btnEnviar;
-
+    Button btnverImagen, btnregresar, btnEnviar, btneliminar, btnactualizar, btnllamar;
     EditText buscar;
-
     ListView listaContactos;
 
     ArrayList<Contactos> ArrayLista;
     ArrayList<String> ArrayContactos;
+
     Contactos Contacto;
 
-
     private EditText busqueda;
+
     private String Dato;
-    private String Pais;
     private String Nombre;
     private String Telefono;
     private String Nota;
@@ -78,6 +76,7 @@ public class ListContacActivity extends AppCompatActivity {
         btnactualizar = (Button) findViewById(R.id.btnActualizar);
         btnverImagen = (Button) findViewById(R.id.btnVer);
         btnEnviar = (Button) findViewById(R.id.btnCompartir);
+        btnregresar = (Button) findViewById(R.id.btnRegresar);
 
 
         obtenerListaContactos();
@@ -94,14 +93,11 @@ public class ListContacActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
                 adp.getFilter().filter(charSequence);
-
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-
             }
         });
 
@@ -112,7 +108,7 @@ public class ListContacActivity extends AppCompatActivity {
                 view.setSelected(true);
                 Dato = "" + ArrayLista.get(position).getId();
                 Nombre = "" + ArrayLista.get(position).getNombres();
-                Telefono = "+" + ArrayLista.get(position).getTelefonos();
+                Telefono = "" + ArrayLista.get(position).getTelefonos();
                 Nota = "" + ArrayLista.get(position).getNotas();
                 SelectedRow = true;
             }
@@ -200,6 +196,15 @@ public class ListContacActivity extends AppCompatActivity {
             }
         });
 
+        btnregresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListContacActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         //BOTON COMPARTIR CONTACTO
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -265,9 +270,9 @@ public class ListContacActivity extends AppCompatActivity {
         while (cursor.moveToNext()) {
             listviewContactos = new Contactos();
             listviewContactos.setId(cursor.getInt(0));
-            listviewContactos.setNombres(cursor.getString(1));
-            listviewContactos.setTelefonos(cursor.getString(2));
-            listviewContactos.setNotas(cursor.getString(3));
+            listviewContactos.setNombres(cursor.getString(2));
+            listviewContactos.setTelefonos(cursor.getString(3));
+            listviewContactos.setNotas(cursor.getString(5));
             ArrayLista.add(listviewContactos);
         }
         cursor.close();

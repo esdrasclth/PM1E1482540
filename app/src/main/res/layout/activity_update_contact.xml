@@ -88,8 +88,16 @@
             android:id="@+id/btnActualizar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/md_theme_light_onPrimaryContainer"
             android:layout_marginTop="30dp"
             android:text="ACTUALIZAR CONTACTO" />
+
+        <Button
+            android:id="@+id/btnRegresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="REGRESAR A LA LISTA" />
 
     </LinearLayout>
 
@@ -107,5 +115,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
